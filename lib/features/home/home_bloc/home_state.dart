@@ -20,7 +20,11 @@ class HomeNavigateToWishlistPageActionState extends HomeActionState {}
 
 class HomeNavigateToCartPageActionState extends HomeActionState {}
 
-class HomeProductItemWishlistedActionState extends HomeActionState {}
+class HomeProductItemWishlistedActionState extends HomeActionState {
+  final String itemName;
+
+  HomeProductItemWishlistedActionState({required this.itemName});
+}
 
 class HomeProductItemCartedActionState extends HomeActionState {
   final String itemName;

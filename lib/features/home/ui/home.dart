@@ -39,14 +39,16 @@ class _HomeState extends State<Home> {
             MaterialPageRoute(builder: (context) => const Wishlist()),
           );
         } else if (state is HomeProductItemCartedActionState) {
-          final removedItemNames = state.itemName;
+          final addedItemName = state.itemName;
 
-          final snackBarContent = 'Items added: $removedItemNames';
+          final snackBarContent = 'Items added: $addedItemName';
           ScaffoldMessenger.of(context)
               .showSnackBar(SnackBar(content: Text(snackBarContent)));
         } else if (state is HomeProductItemWishlistedActionState) {
+          final addedCartedItemName = state.itemName;
+          final snackBarContent = 'Items added: $addedCartedItemName';
           ScaffoldMessenger.of(context)
-              .showSnackBar(const SnackBar(content: Text('Item wishlisted')));
+              .showSnackBar(SnackBar(content: Text(snackBarContent)));
         }
       },
       builder: (context, state) {
